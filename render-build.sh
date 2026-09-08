@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-# exit on error
-set -o errexit
+set -e
 
 if [ -d "backend" ]; then
   cd backend
 fi
 
-npm install
+npm install --include=dev
 npx prisma generate
 npx tsc
