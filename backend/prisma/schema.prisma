@@ -1,6 +1,5 @@
 datasource db {
-  // Use "sqlite" for local offline testing or "postgresql" for cloud deployment (Render/Railway/Supabase/Neon)
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
