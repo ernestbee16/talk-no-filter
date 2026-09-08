@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: talk-no-filter-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ENCRYPTION_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: talk-no-filter-db
+          property: connectionString
+
+databases:
+  - name: talk-no-filter-db
+    plan: free
+    databaseName: talk_no_filter
+    user: talk_no_filter_user
