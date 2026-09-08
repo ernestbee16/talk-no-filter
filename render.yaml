@@ -4,9 +4,8 @@ services:
     env: node
     region: oregon
     plan: free
-    rootDir: backend
-    buildCommand: ./render-build.sh
-    startCommand: npm run start
+    buildCommand: npm install --prefix backend && npm run build --prefix backend
+    startCommand: npm run start --prefix backend
     envVars:
       - key: PORT
         value: 5000
