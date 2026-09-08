@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "if [ -d \"backend\" ]; then cd backend; fi && npm install && npx prisma generate && npx tsc",
-    "start": "if [ -d \"backend\" ]; then cd backend; fi && npm run start"
+    "build": "npm install --prefix backend && npm run build --prefix backend",
+    "start": "npm run start --prefix backend"
   }
 }
