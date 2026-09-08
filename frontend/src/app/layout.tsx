@@ -4,7 +4,6 @@ import './globals.css';
 import { AuthProvider } from '@/context/AuthContext';
 import Navigation from '@/components/Navigation';
 import Logo from '@/components/Logo';
-import RealtimeToast from '@/components/RealtimeToast';
 import Link from 'next/link';
 
 const outfit = Outfit({
@@ -51,9 +50,6 @@ export default function RootLayout({
           <main className="flex-grow flex flex-col">
             {children}
           </main>
-
-          {/* Real-time Activity Toast */}
-          <RealtimeToast />
 
           {/* Global Enterprise Healthcare Footer */}
           <footer className="border-t border-slate-800/80 bg-[#050B12] py-12 px-6">

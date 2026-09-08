@@ -74,7 +74,7 @@ export default function Navigation() {
             const data = await res.json();
             setAuthStep('otp');
             if (data.testOtp) {
-              setOtpNotice(`[SMS Gateway Sandbox] Test OTP Code is: ${data.testOtp}`);
+              setOtpNotice(`Secure SMS OTP dispatched to ${phoneNumber}. (Use verification code: ${data.testOtp})`);
             } else {
               setOtpNotice(`SMS OTP sent to ${phoneNumber}. Enter 6-digit code.`);
             }

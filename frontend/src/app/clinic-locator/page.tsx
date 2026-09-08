@@ -49,6 +49,42 @@ const CLINICS: Clinic[] = [
     hours: '24/7 Open',
     phone: '+250 788 123 004',
   },
+  {
+    id: '5',
+    name: 'CHUK University Teaching Hospital',
+    district: 'Nyarugenge, Kigali',
+    type: 'National Referral Hospital',
+    services: ['24/7 PEP Trauma Unit', 'Advanced HIV Care', 'Specialized SRH'],
+    hours: '24/7 Emergency',
+    phone: '+250 788 384 000',
+  },
+  {
+    id: '6',
+    name: 'Huye University Teaching Hospital (CHUB)',
+    district: 'Huye, Southern Province',
+    type: 'Referral Hospital',
+    services: ['Youth SRH Services', 'PEP Emergency', 'Confidential HIV Testing'],
+    hours: '24/7 Emergency',
+    phone: '+250 788 123 500',
+  },
+  {
+    id: '7',
+    name: 'Musanze Youth SRH Center',
+    district: 'Musanze, Northern Province',
+    type: 'Youth Friendly Clinic',
+    services: ['Free Condoms & Contraception', 'PrEP Center', 'Youth Peer Support'],
+    hours: 'Mon - Sat: 8:00 AM - 6:00 PM',
+    phone: '+250 788 123 600',
+  },
+  {
+    id: '8',
+    name: 'Rubavu District Hospital',
+    district: 'Rubavu, Western Province',
+    type: 'District Hospital',
+    services: ['PEP Available', 'STIs Management', 'HIV Voluntary Counseling'],
+    hours: '24/7 Open',
+    phone: '+250 788 123 700',
+  },
 ];
 
 export default function ClinicLocatorPage() {
