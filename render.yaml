@@ -10,6 +10,8 @@ services:
     envVars:
       - key: PORT
         value: 5000
+      - key: NPM_CONFIG_PRODUCTION
+        value: "false"
       - key: JWT_SECRET
         generateValue: true
       - key: ENCRYPTION_KEY

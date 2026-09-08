@@ -4,11 +4,14 @@ services:
     env: node
     region: oregon
     plan: free
+    rootDir: backend
     buildCommand: npm install && npm run build
     startCommand: npm run start
     envVars:
       - key: PORT
         value: 5000
+      - key: NPM_CONFIG_PRODUCTION
+        value: "false"
       - key: JWT_SECRET
         generateValue: true
       - key: ENCRYPTION_KEY
