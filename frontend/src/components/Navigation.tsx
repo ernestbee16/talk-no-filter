@@ -319,18 +319,36 @@ export default function Navigation() {
 
             <form onSubmit={handleLoginSubmit} className="space-y-4">
               {isExpertLoginMode ? (
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                    Expert Security Identifier (e.g. expert1)
+                <div className="space-y-3">
+                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider">
+                    Select Verified Rwandan Health Practitioner
                   </label>
-                  <input
-                    type="text"
+                  <select
                     value={expertId}
                     onChange={(e) => setExpertId(e.target.value)}
-                    placeholder="Enter your registered identifier"
-                    className="w-full bg-slate-900/80 border border-slate-700/80 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500"
-                    required
-                  />
+                    className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500"
+                  >
+                    <option value="">-- Choose Practitioner Account --</option>
+                    <option value="expert1">expert1 — Dr. Keza Aline (HIV Prevention & Care Specialist)</option>
+                    <option value="expert2">expert2 — Dr. Ntwari Jean (Youth SRH Consultant)</option>
+                    <option value="expert3">expert3 — Dr. Uwase Marie (Adolescent Gynaecologist)</option>
+                    <option value="expert4">expert4 — Dr. Mugisha Eric (Clinical Psychologist & Mental Health)</option>
+                    <option value="expert5">expert5 — Dr. Umutoni Divine (Sexual & Reproductive Health)</option>
+                  </select>
+                  
+                  <div className="pt-1">
+                    <label className="block text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">
+                      Or type custom identifier
+                    </label>
+                    <input
+                      type="text"
+                      value={expertId}
+                      onChange={(e) => setExpertId(e.target.value)}
+                      placeholder="e.g. expert1"
+                      className="w-full bg-slate-900/80 border border-slate-700/80 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-cyan-500"
+                      required
+                    />
+                  </div>
                 </div>
               ) : authStep === 'phone' ? (
                 <div>

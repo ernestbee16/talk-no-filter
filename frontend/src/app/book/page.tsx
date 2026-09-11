@@ -61,17 +61,35 @@ export default function BookSession() {
     }
   }, [selectedExpertId]);
 
+  const FALLBACK_EXPERTS: Expert[] = [
+    { id: 'expert1', name: 'Dr. Keza Aline', specialty: 'HIV Prevention & Care Specialist' },
+    { id: 'expert2', name: 'Dr. Ntwari Jean', specialty: 'Youth SRH Consultant' },
+    { id: 'expert3', name: 'Dr. Uwase Marie', specialty: 'Adolescent Gynaecologist' },
+    { id: 'expert4', name: 'Dr. Mugisha Eric', specialty: 'Clinical Psychologist & Mental Health Specialist' },
+    { id: 'expert5', name: 'Dr. Umutoni Divine', specialty: 'Sexual & Reproductive Health Practitioner' },
+  ];
+
   const fetchExperts = async () => {
     setLoadingExperts(true);
     try {
       const res = await fetch(`${API_BASE_URL}/api/experts`);
       if (res.ok) {
         const data = await res.json();
-        setExperts(data);
-        if (data.length > 0) setSelectedExpertId(data[0].id);
+        if (Array.isArray(data) && data.length > 0) {
+          setExperts(data);
+          setSelectedExpertId(data[0].id);
+        } else {
+          setExperts(FALLBACK_EXPERTS);
+          setSelectedExpertId(FALLBACK_EXPERTS[0].id);
+        }
+      } else {
+        setExperts(FALLBACK_EXPERTS);
+        setSelectedExpertId(FALLBACK_EXPERTS[0].id);
       }
     } catch (e) {
       console.error(e);
+      setExperts(FALLBACK_EXPERTS);
+      setSelectedExpertId(FALLBACK_EXPERTS[0].id);
     } finally {
       setLoadingExperts(false);
     }
