@@ -173,7 +173,7 @@ export default function Home() {
         {/* Statistics Bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-10">
           <div className="glass-panel p-4 rounded-2xl border-slate-800/80 text-center space-y-1">
-            <span className="text-2xl sm:text-3xl font-black text-cyan-400">10,000+</span>
+            <span className="text-2xl sm:text-3xl font-black text-cyan-400">0</span>
             <p className="text-[11px] text-slate-400 font-semibold">Youth Served Confidentiality</p>
           </div>
           <div className="glass-panel p-4 rounded-2xl border-slate-800/80 text-center space-y-1">
@@ -294,6 +294,44 @@ export default function Home() {
               Explore Mental Health Hub →
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Verified Rwandan Health Experts Section */}
+      <section className="max-w-7xl mx-auto px-6 space-y-6 pt-4">
+        <div className="text-center space-y-1">
+          <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Confidential Medical Team</span>
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white">Verified Rwandan Health Experts</h2>
+          <p className="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto pt-1">
+            Licensed practitioners providing anonymous, non-judgmental, end-to-end encrypted consultations.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {[
+            { name: 'Dr. Keza Aline', profession: 'HIV Prevention & Care Specialist', icon: '🩺', badge: 'HIV & PEP' },
+            { name: 'Dr. Ntwari Jean', profession: 'Youth SRH Consultant', icon: '🌿', badge: 'Youth SRH' },
+            { name: 'Dr. Uwase Marie', profession: 'Adolescent Gynaecologist', icon: '👩‍⚕️', badge: 'Gynaecology' },
+            { name: 'Dr. Mugisha Eric', profession: 'Clinical Psychologist & Mental Health', icon: '🧠', badge: 'Mental Health' },
+            { name: 'Dr. Umutoni Divine', profession: 'Sexual & Reproductive Health', icon: '⚕️', badge: 'Family Planning' },
+          ].map((expert, idx) => (
+            <div key={idx} className="glass-panel p-5 rounded-2xl border-slate-800/80 bg-[#101C2C] space-y-3 hover:border-cyan-500/40 transition-all flex flex-col justify-between text-center">
+              <div className="space-y-2">
+                <div className="w-12 h-12 mx-auto bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center font-bold text-xl border border-cyan-500/20">
+                  {expert.icon}
+                </div>
+                <span className="inline-block text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-slate-800 text-cyan-400 border border-slate-700/80">
+                  {expert.badge}
+                </span>
+                <h3 className="text-base font-bold text-white leading-tight">{expert.name}</h3>
+                <p className="text-xs text-slate-400 leading-snug">{expert.profession}</p>
+              </div>
+              <Link href="/book" className="text-xs font-bold text-cyan-400 hover:text-cyan-300 pt-2 flex items-center justify-center space-x-1">
+                <span>Book Private Session</span>
+                <span>→</span>
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
 

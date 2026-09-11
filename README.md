@@ -51,9 +51,11 @@ This is the full-stack codebase for **Talk No Filter**, a youth-friendly digital
 
 ### 2. Verified Clinical Expert Login
 * To login as one of our seeded practitioners, select **"Log in as Verified Expert"** inside the login portal and enter one of these seeded identifiers:
-  * `expert1` (Dr. Keza Aline — HIV Prevention Specialist)
+  * `expert1` (Dr. Keza Aline — HIV Prevention & Care Specialist)
   * `expert2` (Dr. Ntwari Jean — Youth SRH Consultant)
   * `expert3` (Dr. Uwase Marie — Adolescent Gynaecologist)
+  * `expert4` (Dr. Mugisha Eric — Clinical Psychologist & Mental Health Specialist)
+  * `expert5` (Dr. Umutoni Divine — Sexual & Reproductive Health Practitioner)
 
 ---
 

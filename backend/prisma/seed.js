@@ -21,6 +21,7 @@ async function main() {
   // Create experts
   const expert1 = await prisma.expert.create({
     data: {
+      id: 'expert1',
       name: 'Dr. Keza Aline',
       specialty: 'HIV Prevention & Care Specialist',
       verified: true,
@@ -29,6 +30,7 @@ async function main() {
 
   const expert2 = await prisma.expert.create({
     data: {
+      id: 'expert2',
       name: 'Dr. Ntwari Jean',
       specialty: 'Youth SRH Consultant',
       verified: true,
@@ -37,8 +39,27 @@ async function main() {
 
   const expert3 = await prisma.expert.create({
     data: {
+      id: 'expert3',
       name: 'Dr. Uwase Marie',
       specialty: 'Adolescent Gynaecologist',
+      verified: true,
+    },
+  });
+
+  const expert4 = await prisma.expert.create({
+    data: {
+      id: 'expert4',
+      name: 'Dr. Mugisha Eric',
+      specialty: 'Clinical Psychologist & Mental Health Specialist',
+      verified: true,
+    },
+  });
+
+  const expert5 = await prisma.expert.create({
+    data: {
+      id: 'expert5',
+      name: 'Dr. Umutoni Divine',
+      specialty: 'Sexual & Reproductive Health Practitioner',
       verified: true,
     },
   });
@@ -66,10 +87,18 @@ async function main() {
     { expertId: expert3.id, startTime: createDate(0, 13, 0), endTime: createDate(0, 13, 30) },
     { expertId: expert3.id, startTime: createDate(0, 16, 0), endTime: createDate(0, 16, 30) },
 
+    { expertId: expert4.id, startTime: createDate(0, 12, 0), endTime: createDate(0, 12, 30) },
+    { expertId: expert4.id, startTime: createDate(0, 17, 0), endTime: createDate(0, 17, 30) },
+
+    { expertId: expert5.id, startTime: createDate(0, 10, 30), endTime: createDate(0, 11, 0) },
+    { expertId: expert5.id, startTime: createDate(0, 14, 30), endTime: createDate(0, 15, 0) },
+
     // Tomorrow slots
     { expertId: expert1.id, startTime: createDate(1, 9, 0), endTime: createDate(1, 9, 30) },
     { expertId: expert2.id, startTime: createDate(1, 10, 0), endTime: createDate(1, 10, 30) },
     { expertId: expert3.id, startTime: createDate(1, 14, 0), endTime: createDate(1, 14, 30) },
+    { expertId: expert4.id, startTime: createDate(1, 15, 0), endTime: createDate(1, 15, 30) },
+    { expertId: expert5.id, startTime: createDate(1, 16, 0), endTime: createDate(1, 16, 30) },
   ];
 
   for (const slot of slotsData) {
